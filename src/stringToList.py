@@ -8,4 +8,5 @@ def stringToList(string):
 
 # Test
 # test = "ABCD"
+# print('Result : \n')
 # print(stringToList(test))
