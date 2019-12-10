@@ -3,7 +3,16 @@
 
 
 def string_to_list(string):
-    # Convert String to a list of chars
+    """Convert String to a list of chars
+    
+    
+    Args:
+        string: A string to convert to a list 
+
+    Returns:
+        A list of each characters in the given string
+
+    """
     return [char for char in string]
 
 
