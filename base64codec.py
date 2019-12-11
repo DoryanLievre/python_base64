@@ -1,4 +1,4 @@
-from src import *
+from src.functions import *
 
 def main():
     print('Base 64 encoder.')

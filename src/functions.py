@@ -33,7 +33,6 @@ if __name__ == "__main__":
     print(string_to_list(test))
 
 
-
 #
 # Step 2
 #
@@ -58,7 +57,7 @@ def char_list_to_int(list):
     return list_of_int
 
 
-if  __name__ == "__main__":
+if __name__ == "__main__":
     #
     # initialize list
     #
@@ -86,7 +85,7 @@ def list_of_int_to_binary_numbers(list):
 
     """
 
-    binary_list =[]
+    binary_list = []
     for element in list:
         binary_list.append(format(element, '08b'))
     return binary_list
@@ -111,7 +110,7 @@ if __name__ == "__main__":
 
 
 def binary_list_to_binary_string(list):
-    """
+    """Convert a list of binary numbers to a list of one big binary string
 
     Args:
         list: A list of binary numbers
@@ -120,7 +119,7 @@ def binary_list_to_binary_string(list):
         binary_string: A list of one big binary string
 
     """
-    binary_string ="".join(list)
+    binary_string = "".join(list)
     return binary_string
 
 
@@ -133,7 +132,79 @@ if __name__ == "__main__":
     print(binary_list_to_binary_string(test))
 
 
-
 #
 # Step 5
 #
+
+
+def binary_string_to_binary_list_of_6(String):
+    """ Convert a String to a list of binary numbers string
+
+
+    Args:
+        list: A list of string
+
+    Returns:
+        binary_tab: A binary_list of list of 6 bit
+
+    """
+
+
+    binary_list = []
+    # Convert the string into items of 6 characters long into a list
+    for i in range(0, len(String), 6):
+        binary_list.append(String[i: i+6])
+        # We get the length of the last element of the list
+    length_last_item = len(binary_list[len(binary_list)-1])
+    if length_last_item < 6:
+        str1 = binary_list.pop()
+        # Calculate how many 0 you need to add
+        # Concat the pop and the number of "0" required
+        binary_list.append(str1 + "0" * (6 - length_last_item))
+    return binary_list
+
+# binary_list[len(binary_list)-1] => Get the index of the last element of binary_list(binary_list[5]and retrun'00')
+# binary_list.pop() => Get the last item of my lits and remove it from it (My list no longer contains'00')
+
+
+if __name__ == "__main__":
+    #
+    # initialize list
+    #
+    test = '01000001010000100100001101000100'
+    print('Result binary_list_of_6_bit : \n')
+    print(binary_string_to_binary_list_of_6(test))
+
+
+#
+# Step 6
+#
+
+def binary_to_int(list):
+    """
+
+    Args:
+        list: A list of binary numbers on 6 bits
+
+    Returns:
+        list_of_int : A list of int
+
+    """
+    binary_list = []
+    for bits in list:
+        binary_list.append(int(bits, 2))
+    return binary_list
+
+
+if __name__ == "__main__":
+    #
+    # initialize list
+    #
+    test = ["010000", "010100", "001001", "000011", "010001", "000000"]
+    print('Result list_of_int : \n')
+    print(binary_to_int(test))
+
+#
+# Step 7
+#
+
