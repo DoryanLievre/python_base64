@@ -208,3 +208,113 @@ if __name__ == "__main__":
 # Step 7
 #
 
+
+def list_to_base64(int_list):
+    """
+
+    Args:
+        list: A list of int
+
+    Returns:
+        list_base64: A list of of converted int into base64
+
+    """
+    base64_dictionary = {
+        'A': 0, 'Q': 16, 'g': 32, 'w': 48,
+        'B': 1, 'R': 17, 'h': 33, 'x': 49,
+        'C': 2, 'S': 18, 'i': 34, 'y': 50,
+        'D': 3, 'T': 19, 'j': 35, 'z': 51,
+        'E': 4, 'U': 20, 'k': 36, '0': 52,
+        'F': 5, 'V': 21, 'l': 37, '1': 53,
+        'G': 6, 'W': 22, 'm': 38, '2': 54,
+        'H': 7, 'X': 23, 'n': 39, '3': 55,
+        'I': 8, 'Y': 24, 'o': 40, '4': 56,
+        'J': 9, 'Z': 25, 'p': 41, '5': 57,
+        'K': 10, 'a': 26, 'q': 42, '6': 58,
+        'L': 11, 'b': 27, 'r': 43, '7': 59,
+        'M': 12, 'c': 28, 's': 44, '8': 60,
+        'N': 13, 'd': 29, 't': 45, '9': 61,
+        'O': 14, 'e': 30, 'u': 46, '+': 62,
+        'P': 15, 'f': 31, 'v': 47, '/': 63
+    }
+    list_base64 = []
+
+    # for each element of the given list => to obtain its equivalent in base 64 and add it to the empty list
+    for element in int_list:
+        list_base64.append(list(base64_dictionary.keys())[list(base64_dictionary.values()).index(element)])
+    return list_base64
+
+
+if __name__ == "__main__":
+    #
+    # initialize list
+    #
+    test = [16, 20, 9, 3, 17, 0]
+    print('Result list_to_base64 : \n')
+    print(list_to_base64(test))
+
+
+#
+# Step 8
+#
+
+def add_equals(char_list):
+    """
+
+    Args:
+        char_list: A list of char
+
+    Returns:
+        char_list: A list of char with 2 equals
+
+    """
+    tmp = True
+    while tmp:
+        # If the number of elements is a multiple of 4 => stop looping and display the list
+        if (len(char_list) % 4) == 0:
+            tmp = False
+        # If the number of elements is not a multiple of 4 => continue to loop by adding "="
+        if (len(char_list)%4) != 0:
+            char_list.append("=")
+
+    return char_list
+
+if __name__ == "__main__":
+    #
+    # initialize list
+    #
+    test = ["Q", "U", "J", "D", "R", "A"]
+    print('Result list_add_equals : \n')
+    print(add_equals(test))
+
+
+#
+# Step 8
+#
+
+def list_to_string(list_of_char):
+    """
+
+    Args:
+        list_of_char: A list of char
+
+    Returns:
+        list_of_string: A list of string
+
+    """
+    list_of_string = ""
+    for element in list_of_char:
+        list_of_string += element
+    return list_of_string
+
+
+if __name__ == "__main__":
+    #
+    # initialize list
+    #
+    test = ["Q", "U", "J", "D", "R", "A", "=", "="]
+    print('Result list_to_string : \n')
+    print(list_to_string(test))
+
+
+
