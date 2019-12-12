@@ -1,5 +1,14 @@
 from src.functions import *
+
 import string
+# import argparse
+
+# parser = argparse.ArgumentParser(description='test, encodage décodage')
+# parser.add_argument('-e', '--encoder', type=string, metavar='', help='encoder')
+# parser.add_argument('-d', '--decoder', type=string, metavar='', help='decoder')
+
+# args = parser.parse_args()
+
 
 # x = input("Type what you want to encode ")
 #
@@ -43,38 +52,50 @@ def encode(s_to_encode):
 
     Returns: The base 64 encoded string
     """
+    encode = string_to_list(s_to_encode)
+    encode2 = char_list_to_int(encode)
+    encode3 = list_of_int_to_binary_numbers(encode2)
+    encode4 = binary_list_to_binary_string(encode3)
+    encode5 = binary_string_to_binary_list_of_6(encode4)
+    encode6 = binary_to_int(encode5)
+    encode7 = list_to_base64(encode6)
+    encode8 = add_equals(encode7)
+    encode9 = list_to_string(encode8)
 
-    def to_binary_repr(s):
-        """Transform a string to it's binary representation
+    print("The encoded result is: " + "'" + encode9 + "'")
+    return encode9
 
-        Args;
-            s: The string to repersent in binary
+    # def to_binary_repr(s):
+    #     """Transform a string to it's binary representation
 
-        Returns: The binary representation
-        """
-        return ''.join(
-                (
-                    format(car, '0>8b')
-                    for car in s.encode()
-                )
-        )
+    #     Args;
+    #         s: The string to repersent in binary
 
-    def to_b64_repr(s):
-        """Transform a string to it's base 64 encoding
+    #     Returns: The binary representation
+    #     """
+    #     return ''.join(
+    #             (
+    #                 format(car, '0>8b')
+    #                 for car in s.encode()
+    #             )
+    #     )
 
-        Args;
-            s: The string to represent in base 64
+    # def to_b64_repr(s):
+    #     """Transform a string to it's base 64 encoding
 
-        Returns: The base 64 representation (without '=' complement
-        """
-        return ''.join(
-                (
-                    b64()[int(to_binary_repr(s)[position:position + 6].ljust(6, '0'), base=2)]
-                    for position in range(0, len(to_binary_repr(s)), 6)
-                )
-        )
+    #     Args;
+    #         s: The string to represent in base 64
 
-    return to_b64_repr(s_to_encode) + '=' * (4 - (len(to_b64_repr(s_to_encode)) % 4))
+    #     Returns: The base 64 representation (without '=' complement
+    #     """
+    #     return ''.join(
+    #             (
+    #                 b64()[int(to_binary_repr(s)[position:position + 6].ljust(6, '0'), base=2)]
+    #                 for position in range(0, len(to_binary_repr(s)), 6)
+    #             )
+    #     )
+
+    # return to_b64_repr(s_to_encode) + '=' * (4 - (len(to_b64_repr(s_to_encode)) % 4))
 
 
 def decode(s_to_decode):
@@ -85,7 +106,6 @@ def decode(s_to_decode):
 
     Returns: The base 64 decoded string
     """
-
     def to_b64(s):
         """
         Args:
