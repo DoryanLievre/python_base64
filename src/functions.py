@@ -1,10 +1,11 @@
 """ All function to Encode/ Decode
 
 """
-
+################################################################
 #
 # Step 1
 #
+
 
 """Convert a string to a list of chars
 """
@@ -32,10 +33,11 @@ if __name__ == "__main__":
     print('Result : \n')
     print(string_to_list(test))
 
-
+################################################################
 #
 # Step 2
 #
+
 
 """Convert a list of chars to a list of ints
 """
@@ -66,6 +68,7 @@ if __name__ == "__main__":
     print(char_list_to_int(test))
 
 
+################################################################
 #
 # Step 3
 #
@@ -99,7 +102,7 @@ if __name__ == "__main__":
     print('Result : \n')
     print(list_of_int_to_binary_numbers(test))
 
-
+################################################################
 #
 # Step 4
 #
@@ -131,7 +134,7 @@ if __name__ == "__main__":
     print('Result : \n')
     print(binary_list_to_binary_string(test))
 
-
+################################################################
 #
 # Step 5
 #
@@ -148,7 +151,6 @@ def binary_string_to_binary_list_of_6(String):
         binary_tab: A binary_list of list of 6 bit
 
     """
-
 
     binary_list = []
     # Convert the string into items of 6 characters long into a list
@@ -175,7 +177,7 @@ if __name__ == "__main__":
     print('Result binary_list_of_6_bit : \n')
     print(binary_string_to_binary_list_of_6(test))
 
-
+################################################################
 #
 # Step 6
 #
@@ -204,6 +206,8 @@ if __name__ == "__main__":
     print('Result list_of_int : \n')
     print(binary_to_int(test))
 
+
+################################################################
 #
 # Step 7
 #
@@ -254,6 +258,7 @@ if __name__ == "__main__":
     print(list_to_base64(test))
 
 
+################################################################
 #
 # Step 8
 #
@@ -288,6 +293,7 @@ if __name__ == "__main__":
     print(add_equals(test))
 
 
+################################################################
 #
 # Step 8
 #
