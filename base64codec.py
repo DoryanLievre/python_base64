@@ -1,40 +1,5 @@
 from src.functions import *
 
-import string
-# import argparse
-
-# parser = argparse.ArgumentParser(description='test, encodage décodage')
-# parser.add_argument('-e', '--encoder', type=string, metavar='', help='encoder')
-# parser.add_argument('-d', '--decoder', type=string, metavar='', help='decoder')
-
-# args = parser.parse_args()
-
-
-# x = input("Type what you want to encode ")
-#
-#
-# def main(x) -> string:
-#     encode = string_to_list(x)
-#     encode2 = char_list_to_int(encode)
-#     encode3 = list_of_int_to_binary_numbers(encode2)
-#     encode4 = binary_list_to_binary_string(encode3)
-#     encode5 = binary_string_to_binary_list_of_6(encode4)
-#     encode6 = binary_to_int(encode5)
-#     encode7 = list_to_base64(encode6)
-#     encode8 = add_equals(encode7)
-#     encode9 = list_to_string(encode8)
-#
-#     print("The encoded result is: " + "'" + encode9 + "'")
-#     return encode9
-#
-#
-# if __name__ == '__main__':
-#     #
-#     # Execute main when the module is directly given to Python Interpreter
-#     # but not when the module is imported in another module
-#     #
-#     main(x)
-
 
 def b64():
     """The base 64 table
@@ -64,38 +29,6 @@ def encode(s_to_encode):
 
     print("The encoded result is: " + "'" + encode9 + "'")
     return encode9
-
-    # def to_binary_repr(s):
-    #     """Transform a string to it's binary representation
-
-    #     Args;
-    #         s: The string to repersent in binary
-
-    #     Returns: The binary representation
-    #     """
-    #     return ''.join(
-    #             (
-    #                 format(car, '0>8b')
-    #                 for car in s.encode()
-    #             )
-    #     )
-
-    # def to_b64_repr(s):
-    #     """Transform a string to it's base 64 encoding
-
-    #     Args;
-    #         s: The string to represent in base 64
-
-    #     Returns: The base 64 representation (without '=' complement
-    #     """
-    #     return ''.join(
-    #             (
-    #                 b64()[int(to_binary_repr(s)[position:position + 6].ljust(6, '0'), base=2)]
-    #                 for position in range(0, len(to_binary_repr(s)), 6)
-    #             )
-    #     )
-
-    # return to_b64_repr(s_to_encode) + '=' * (4 - (len(to_b64_repr(s_to_encode)) % 4))
 
 
 def decode(s_to_decode):
